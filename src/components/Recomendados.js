@@ -8,7 +8,7 @@ const Recomendados = () => {
   useEffect(() => {
     const options = {
       method: "GET",
-      url: "http://localhost:3001/articulos",
+      url: "https://cisheycode-server.vercel.app:3001/articulos",
     };
 
     axios
