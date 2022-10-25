@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="footer_items">
           <i class="bx bxl-gmail"></i>
           <a href="#" className="footer_links">
-            Contacto
+            Contactame
           </a>
         </div>
         <div className="footer_items">
