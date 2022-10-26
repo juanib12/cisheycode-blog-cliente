@@ -21,7 +21,7 @@ const Articulo = () => {
   useEffect(() => {
     const options = {
       method: "GET",
-      url: `https://cisheycode-server.vercel.app:3001/articulo/${id}`,
+      url: `https://ffffffffff.onrender.com/articulo/${id}`,
     };
 
     axios
