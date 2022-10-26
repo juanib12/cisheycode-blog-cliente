@@ -13,12 +13,12 @@ const Home = () => {
       method: "GET",
       url: "https://ffffffffff.onrender.com/articulos",
     };
-    setLoading(true)
+    setLoading(true);
     axios
       .request(options)
       .then((response) => {
         setData(response.data[response.data.length - 1]);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -29,7 +29,9 @@ const Home = () => {
   return (
     <section className="home bd-grid">
       {loading ? (
-        <p>LOADINGGGGGGGGGGGGGG</p>
+        <div className="spinner-container">
+          <div className="loading-spinner"></div>
+        </div>
       ) : (
         <>
           <h2>Último artículo</h2>
