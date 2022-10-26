@@ -14,20 +14,26 @@ const Home = () => {
       url: "https://ffffffffff.onrender.com/articulos",
     };
 
-    axios
-      .request(options)
-      .then((response) => {
-        setLoading(true);
-        setData(response.data[response.data.length - 1]);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    try {
+      setLoading(true);
+
+      axios
+        .request(options)
+        .then((response) => {
+          setData(response.data[response.data.length - 1]);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        })
+        .finally(() => {});
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
+  console.log(loading)
   return (
     <section className="home bd-grid">
       {loading == true ? (
