@@ -9,7 +9,7 @@ const Recomendados = () => {
   useEffect(() => {
     const options = {
       method: "GET",
-      url: "https://ffffffffff.onrender.com/articulos",
+      url: "https://blog-server-82an.onrender.com/articulos",
     };
     setLoading(true);
 

@@ -22,7 +22,7 @@ const Articulo = () => {
   useEffect(() => {
     const options = {
       method: "GET",
-      url: `https://ffffffffff.onrender.com/articulo/${id}`,
+      url: `https://blog-server-82an.onrender.com/articulo/${id}`,
     };
     setLoading(true);
 
