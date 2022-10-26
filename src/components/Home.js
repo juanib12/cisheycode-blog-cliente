@@ -36,7 +36,7 @@ const Home = () => {
   console.log(loading)
   return (
     <section className="home bd-grid">
-      {loading == true ? (
+      {loading === true ? (
         <p>LOADINGGGGGGGGGGGGGG</p>
       ) : (
         <>
