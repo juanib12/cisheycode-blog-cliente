@@ -1,7 +1,7 @@
 import Categorias from "./Categorias";
 import Recomendados from "./Recomendados";
 import axios from "axios";
-import { useState, useEffect, Suspense, lazy } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {

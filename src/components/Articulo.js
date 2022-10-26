@@ -6,6 +6,7 @@ import Footer from "./Footer";
 
 const Articulo = () => {
   const { id } = useParams();
+  const [loading, setLoading] = useState(false);
 
   const [articulo, setArticulo] = useState({
     id: "",
@@ -23,11 +24,13 @@ const Articulo = () => {
       method: "GET",
       url: `https://ffffffffff.onrender.com/articulo/${id}`,
     };
+    setLoading(true);
 
     axios
       .request(options)
       .then((response) => {
         setArticulo(response.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -37,7 +40,8 @@ const Articulo = () => {
   return (
     <div>
       <Header />
-      <section className="home bd-grid">
+      {loading ? (
+        <section className="home bd-grid">
         <div className="articulo">
           <div className="articulo_info">
             <div className="articulo_info_date">
@@ -70,8 +74,12 @@ const Articulo = () => {
             </div>
           </div>
         </div>
-        <Link to="/" className="post_link"><button className="btn-menu">Volver al menú</button></Link>
+        <Link to="/" className="post_link">
+          <button className="btn-menu">Volver al menú</button>
+        </Link>
       </section>
+      ) : null}
+      
       <Footer />
     </div>
   );
