@@ -16,7 +16,6 @@ const Home = () => {
 
     try {
       setLoading(true);
-
       axios
         .request(options)
         .then((response) => {
@@ -25,7 +24,6 @@ const Home = () => {
         .catch((err) => {
           console.log(err.message);
         })
-        .finally(() => {});
     } catch (err) {
       console.log(err);
     } finally {
