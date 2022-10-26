@@ -1,7 +1,7 @@
 import Categorias from "./Categorias";
 import Recomendados from "./Recomendados";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -13,28 +13,22 @@ const Home = () => {
       method: "GET",
       url: "https://ffffffffff.onrender.com/articulos",
     };
-
-    try {
-      setLoading(true);
-      axios
-        .request(options)
-        .then((response) => {
-          setData(response.data[response.data.length - 1]);
-        })
-        .catch((err) => {
-          console.log(err.message);
-        })
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setLoading(false);
-    }
+    setLoading(true)
+    axios
+      .request(options)
+      .then((response) => {
+        setData(response.data[response.data.length - 1]);
+        setLoading(false)
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   }, []);
 
-  console.log(loading)
+  console.log(loading);
   return (
     <section className="home bd-grid">
-      {loading === true ? (
+      {loading ? (
         <p>LOADINGGGGGGGGGGGGGG</p>
       ) : (
         <>
