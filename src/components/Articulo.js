@@ -70,7 +70,7 @@ const Articulo = () => {
             </div>
           </div>
         </div>
-        <Link to="/" className="post_link"><button className="btn-menu">Volver al menu</button></Link>
+        <Link to="/" className="post_link"><button className="btn-menu">Volver al menú</button></Link>
       </section>
       <Footer />
     </div>
