@@ -12,6 +12,7 @@ const Recomendados = () => {
       url: "https://ffffffffff.onrender.com/articulos",
     };
     setLoading(true);
+
     axios
       .request(options)
       .then((response) => {
@@ -26,6 +27,10 @@ const Recomendados = () => {
   return (
     <section className="home bd-grid">
       {loading ? (
+        <div className="spinner-container">
+          <div className="loading-spinner"></div>
+        </div>
+      ) : (
         <>
           <div className="posts-header">
             <h2>Destacados</h2>
@@ -62,7 +67,7 @@ const Recomendados = () => {
             ))}
           </div>
         </>
-      ) : null}
+      )}
     </section>
   );
 };
