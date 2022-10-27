@@ -229,10 +229,14 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
   margin-top: 20px;
-  width: 150px;
+  width: 100%;
   max-width: 200px;
+}
+
+.last_post_footer p{
+  padding-left: 12px;
 }
 
 .posts-header {
@@ -246,7 +250,7 @@ img {
   text-decoration: none;
   color: #fff;
   padding: 0.5rem;
-  background-color: #111827;
+  /* background-color: #111827; */
   border-radius: 1rem;
   font-size: 1rem;
 }
@@ -286,7 +290,7 @@ img {
 .post-img img {
   object-fit: cover;
   min-width: 100%;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .post-title {
@@ -511,19 +515,25 @@ img {
   border: 2px solid #3665d2;
   color: #3665d2;
 }
+
+
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 .loading-spinner {
   width: 50px;
   height: 50px;
-  border: 10px solid #f3f3f3; /* Light grey */
-  border-top: 10px solid #383636; /* Blue */
+  border: 10px solid #f3f3f3;
+  /* Light grey */
+  border-top: 10px solid #383636;
+  /* Blue */
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
 }
@@ -534,6 +544,64 @@ img {
   align-items: center;
   height: 350px;
 }
+
+.all-articulos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.all-articulos-list {
+  height: 100%;
+  width: 100%;
+}
+
+.list-art {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  background-color: #111827;
+  border-radius: 10px;
+  margin-top: 50px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.list-art:hover {
+  transition: all 0.5s ease;
+  background-color:#1a2338;
+}
+
+.list-art img {
+  border-radius: 10px 0px 0px 10px;
+  object-fit: cover;
+  width: 200px;
+  max-width: 200px;
+  min-width: 200px;
+}
+
+.list-art-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 100%;
+  padding-left: 12px;
+  max-height: 100%;
+}
+
+.list-art-data p {
+  color: rgb(255, 255, 255, 60%);
+}
+
 
 @media screen and (min-width: 576px) {
   .home {
@@ -667,6 +735,22 @@ img {
   .articulo_data_description {
     margin-top: 50px;
   }
+
+  .list-art{
+
+    border: none;
+  }
+
+  .list-art:hover{
+    transition: none;
+    border: none;
+  }
+
+  .list-art-data{
+    font-size: 1rem;
+    height: 100%;
+  }
+
 }
 
 @media screen and (min-width: 768px) {

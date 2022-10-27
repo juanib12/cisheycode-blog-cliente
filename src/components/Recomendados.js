@@ -34,7 +34,9 @@ const Recomendados = () => {
         <>
           <div className="posts-header">
             <h2>Destacados</h2>
-            <button className="btn-menu">Ver todos</button>
+            <Link to="/articulos" className="link">
+              <button className="btn-menu">Ver todos</button>
+            </Link>
           </div>
           <div className="posts">
             {data.map((art) => (
